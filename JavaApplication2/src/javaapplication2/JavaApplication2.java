@@ -34,6 +34,7 @@ public class JavaApplication2 {
             System.out.println("5 – Baja de objeto");
             System.out.println("6 – Mostrar saldos");
             System.out.println("7 – Cambiar importe por dia de un objeto");
+            System.out.println("8 - Guardar en fichero");
             System.out.println("11 – Salir");
             
             System.out.print("Escribe el numero de la opcion deseada: ");
@@ -76,6 +77,11 @@ public class JavaApplication2 {
                         System.out.println("Se ha secleccionado la opcion de modificar el importe por dia");
                         ModificarImporte mi = new ModificarImporte();
                         break;
+                        
+                    case 8:
+                        System.out.println("Se ha secleccionado la opcion de modificar el importe por dia");
+                        GuardarFichero gf = new GuardarFichero();
+                        break; 
                         
                     case 11:
                         System.out.println("Gracias por usar la aplicacion \n");

@@ -35,9 +35,8 @@ public class MostrarSaldos {
             else
             {
                 // Imprimo los usuarios
-                user.listarUsuario();
-                object.listarObjeto();
-                alquiler.listarAlquiler();
+                System.out.println(user.listarUsuario());
+                System.out.println(alquiler.listarAlquiler());
                 
                 for(int i = 0; i < listaAlquiler.size(); i++)
                 {

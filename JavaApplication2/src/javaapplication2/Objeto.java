@@ -20,7 +20,7 @@ public class Objeto {
     private int IDObjeto;                      //Id del objeto                                        
     private String descripcion;                //Descripcion del objeto
     private int precio_dia;                    //Precio de alquiler por dia del objeto
-    private  static int proximoIDObjeto = 0;    //Varible Static para controlar ID dl objeto.
+    private static int proximoIDObjeto = 0;    //Varible Static para controlar ID dl objeto.
     public static ArrayList<Alquiler> listaAlquiler = new ArrayList<Alquiler>();//Arraylist de Objetos Alquilados;
     public static ArrayList<Objeto> listaObjetos = new ArrayList<Objeto>();//Arraylist de Objetos;
     private SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
@@ -175,18 +175,19 @@ public class Objeto {
     /**
     * Realiza un listado de todos los usuarios.
     */
-    public void listarObjeto() 
+    public String listarObjeto() 
     {
+        String s = "";
         for (Objeto o: listaObjetos) 
         {
-            //System.out.println(id.toString());
-            System.out.println("OBJETOS DEL PROPIETARIO " + o.getIDPropietario() + "\n");
-            System.out.println("Codigo del objeto: " + o.getIDObjeto());
-            System.out.println("Descripcion: " + o.getDescripcion());
-            System.out.println("Fecha de disponibilidad: " + o.getFechaInicio() + " - " + o.getFechaFin());
-            System.out.println("Coste de prestamo por dia: " + o.getPrecio_dia()  + "\n");
-            System.out.println("\tPRESTAMOS DEL OBJETO " + o.getIDObjeto() + "\n");
+            s += "OBJETOS DEL PROPIETARIO " + o.getIDPropietario() + "\n" +
+                "Codigo del objeto: " + o.getIDObjeto() + "\n" +
+            "Descripcion: " + o.getDescripcion() + "\n" +
+            "Fecha de disponibilidad: " + o.getFechaInicio() + " - " + o.getFechaFin() + "\n" +
+            "Coste de prestamo por dia: " + o.getPrecio_dia()  + "\n" +
+            "\tPRESTAMOS DEL OBJETO " + o.getIDObjeto() + "\n" ;
         }  
+        return s;
     }
     /**
     * Recogo el ArrayList de objetos.

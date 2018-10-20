@@ -4,14 +4,16 @@
  * and open the template in the editor.
  */
 package javaapplication2;
-
+import java.io.FileWriter;
+import java.io.PrintWriter;
 import java.util.ArrayList;
+
 
 /**
  *
  * @author cristian
  */
-public class ListaObjeto {
+public class GuardarFichero {
     
     // Creacion de variables
     Objeto object = new Objeto();
@@ -20,12 +22,15 @@ public class ListaObjeto {
     public static ArrayList<Objeto> listaObjetos;//Arraylist de Objetos;
     public static ArrayList<Usuario> listaUsuarios;//Arraylist de Usuarios;
     public static ArrayList<Alquiler> listaAlquiler;//Arraylist de Alquiler;
+    int importe = 0;
+    String nombre = "src\\javaapplication2\\Datos.txt";
     
-    ListaObjeto() 
+    GuardarFichero() 
     {
         try{
-            // Obtengo la lista de objetos
-            
+            System.out.println("Guardando fichero ");
+            FileWriter fichero = new FileWriter(nombre);
+            PrintWriter print = new PrintWriter(fichero);
             listaUsuarios = user.getListaUsuarios();
             listaObjetos = object.getListaObjeto();
             listaAlquiler = alquiler.getListaAlquiler();
@@ -34,15 +39,20 @@ public class ListaObjeto {
                 System.out.println("No hay objetos a mostrar");
             else
             {
-                // Imprimo los usuarios
-                System.out.println(user.listarUsuario());
-                System.out.println(object.listarObjeto());
-                System.out.println(alquiler.listarAlquiler());
+                print.print(this.user.listarUsuario());
+                print.print(this.alquiler.listarAlquiler());
                 
+                for(int i = 0; i < listaAlquiler.size(); i++)
+                {
+                    this.importe += listaAlquiler.get(i).getImporteStartup();
+                }
+                print.println("Importe total acumulado para la startup: " + this.importe);
             }
+            print.close();
         }catch(Exception e)
         {
             e.printStackTrace();
         }
     }
+    
 }

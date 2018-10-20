@@ -99,14 +99,16 @@ public class Usuario
     /**
      * Realiza un listado de todos los usuarios.
      */
-    public void listarUsuario() 
+    public String listarUsuario() 
     {
-        for(int ñ = 0; ñ < listaUsuarios.size(); ñ++) 
+        String s = "";
+        for(int i = 0; i < listaUsuarios.size(); i++) 
         {
-            System.out.println("PROPIETARIO " + listaUsuarios.get(ñ).getIDusuario());
-            System.out.println("Nombre del propietario: " + listaUsuarios.get(ñ).getNombre());
-            System.out.println("Correo Electronico: " + listaUsuarios.get(ñ).getCorreo() + "\n");
+            s += "PROPIETARIO " + listaUsuarios.get(i).getIDusuario() + "\n" +
+            "Nombre del propietario: " + listaUsuarios.get(i).getNombre()+ "\n" +
+            "Correo Electronico: " + listaUsuarios.get(i).getCorreo() + "\n";
         }
+        return s;
     }
     /**
     * Sobreescritura del metodo toString para mostrar el ID del usuario, el nombre y el correo 

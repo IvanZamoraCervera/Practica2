@@ -197,15 +197,17 @@ public class Alquiler {
     /**
     * Realiza un listado de todos los usuarios.
     */
-    public void listarAlquiler() 
+    public String listarAlquiler() 
     {
+        String s = "";
         for(Alquiler al: listaAlquiler)
         {
-            System.out.println("\tNombre del cliente " + al.getNombreUsuario());
-            System.out.println("\tFechas del prestamo: " + al.getFecha_ini() + " - " + al.getFecha_fin());
-            System.out.println("\tImporte para el propietario: " + al.getImporte() + " euros");
-            System.out.println("\tImporte para la startup: " + al.getImporteStartup() + " euros" + "\n");
+            s +=   "\t\t  Nombre del cliente " + al.getNombreUsuario() + "\n" +
+                    "\t\t  Fechas del prestamo: " + al.getFecha_ini() + " - " + al.getFecha_fin() + "\n" +
+                    "\t\t  Importe para el propietario: " + al.getImporte() + " euros" + "\n" +
+                    "\t\t  Importe para la startup: " + al.getImporteStartup() + " euros" + "\n";
         }
+        return s;
     }
     /**
     * Sobreescritura del metodo toString para mostrar los datos del alquiler

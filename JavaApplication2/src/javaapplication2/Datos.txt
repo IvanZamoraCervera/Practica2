@@ -1,0 +1,15 @@
+PROPIETARIO 1
+Nombre del propietario: Iván
+Correo Electronico: Zamora@gmail.com
+PROPIETARIO 2
+Nombre del propietario: Cristian
+Correo Electronico: Alba@gmail.com
+		  Nombre del cliente Iván
+		  Fechas del prestamo: 20/10/2018 - 22/10/2018
+		  Importe para el propietario: 400 euros
+		  Importe para la startup: 40 euros
+		  Nombre del cliente Iván
+		  Fechas del prestamo: 20/10/2018 - 22/10/2018
+		  Importe para el propietario: 300 euros
+		  Importe para la startup: 30 euros
+Importe total acumulado para la startup: 70
