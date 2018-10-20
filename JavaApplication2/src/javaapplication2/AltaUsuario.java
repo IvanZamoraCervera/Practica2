@@ -28,7 +28,8 @@ public class AltaUsuario {
             
             System.out.print("Dime tu correo (solo el nombre, automaticamente se añadira al correo de la empresa @gmail.com): ");
             correo = entrada.nextLine();
-            
+            System.out.println("");            
+
             // Creo el usuario con los parametros que han puesto por la consola
             user = new Usuario(nombre,correo);
             // Llamo a la funcion de Usuario para que añado al nuevo usuario al array de usuarios

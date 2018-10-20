@@ -20,6 +20,10 @@ public class JavaApplication2 {
         Scanner entrada = new Scanner(System.in);
         boolean salir = false;
         int opcion = 0;
+        Usuario u = new Usuario();
+        Objeto o = new Objeto();
+        u.crearUsuarios();
+        o.crearObjetos();
         System.out.println("-- Bienvenido a la gestión del STARTUP -- \n");
         while(!salir)
         {
@@ -29,7 +33,8 @@ public class JavaApplication2 {
             System.out.println("4 – Listar todos los objetos");
             System.out.println("5 – Baja de objeto");
             System.out.println("6 – Mostrar saldos");
-            System.out.println("7 – Salir");
+            System.out.println("7 – Cambiar importe por dia de un objeto");
+            System.out.println("11 – Salir");
             
             System.out.print("Escribe el numero de la opcion deseada: ");
             opcion = entrada.nextInt();
@@ -66,8 +71,13 @@ public class JavaApplication2 {
                         System.out.println("Se ha seleccionado la opcion de mostrar saldos \n");
                         MostrarSaldos ms = new MostrarSaldos();
                         break;
-                    
+                        
                     case 7:
+                        System.out.println("Se ha secleccionado la opcion de modificar el importe por dia");
+                        ModificarImporte mi = new ModificarImporte();
+                        break;
+                        
+                    case 11:
                         System.out.println("Gracias por usar la aplicacion \n");
                         salir = true;
                         System.exit(0);

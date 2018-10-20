@@ -9,7 +9,6 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.GregorianCalendar;
 
 /**
  *
@@ -45,7 +44,13 @@ public class Objeto {
     }
     
     Objeto(){}
-    
+    public void crearObjetos()
+    {
+        Objeto o = new Objeto(1,"Objeto de Iván", 300, "25/10/2018");
+        Objeto o2 = new Objeto(2,"Objeto de Cristian", 400, "25/10/2018");
+        listaObjetos.add(o);
+        listaObjetos.add(o2);
+    }
     /**
     * Devuelve el nombre del propietario.
     * @return IDPropietario
@@ -172,24 +177,16 @@ public class Objeto {
     */
     public void listarObjeto() 
     {
-        for (Objeto id : listaObjetos) 
+        for (Objeto o: listaObjetos) 
         {
             //System.out.println(id.toString());
-            System.out.println("OBJETOS DEL PROPIETARIO " + id.getIDPropietario() + "\n");
-            System.out.println("Codigo del objeto: " + id.getIDObjeto());
-            System.out.println("Descripcion: " + id.getDescripcion());
-            System.out.println("Fecha de disponibilidad: " + id.getFechaInicio() + " - " + id.getFechaFin());
-            System.out.println("Coste de prestamo por dia: " + id.getPrecio_dia()  + "\n");
-            System.out.println("\tPRESTAMOS DEL OBJETO " + id.getIDObjeto() + "\n");
-            
-            for(Alquiler al : listaAlquiler)
-            {
-                System.out.println("Nombre del cliente " + user.getNombre() + "\n");
-                System.out.println("Fechas del prestamo: " + al.getFecha_ini() + " - " + al.getFecha_fin());
-                System.out.println("Importe para el propietario: " + al.getImporte());
-                System.out.println("Importe para la startup: " + al.getImporte()*0.10);
-            }
-        } 
+            System.out.println("OBJETOS DEL PROPIETARIO " + o.getIDPropietario() + "\n");
+            System.out.println("Codigo del objeto: " + o.getIDObjeto());
+            System.out.println("Descripcion: " + o.getDescripcion());
+            System.out.println("Fecha de disponibilidad: " + o.getFechaInicio() + " - " + o.getFechaFin());
+            System.out.println("Coste de prestamo por dia: " + o.getPrecio_dia()  + "\n");
+            System.out.println("\tPRESTAMOS DEL OBJETO " + o.getIDObjeto() + "\n");
+        }  
     }
     /**
     * Recogo el ArrayList de objetos.
@@ -206,40 +203,5 @@ public class Objeto {
     public String toString() 
     {
         return " ID del propietario: " + Cadena_idobjeto + " ID del objeto: " + IDObjeto + " descripcion: " + descripcion + " Precio por dia: " + precio_dia + "€" + " y la fecha de disponibilidad " + fechaInicio + "-" + fechaFin;
-    }
-    /**
-    * Alquila un objeto a un usuario en unas fechas determinadas.
-    * @param usuario
-    * @param fechaInicio
-    */
-    public void alquilar(Usuario usuario, GregorianCalendar fechaInicio)
-    {
-        //alquiler.add(new AlquilerObjeto(this, usuario, fechaInicio));
-        //usuario.anyadirObjeto(this, fechaInicio);
-    }
-    
-    /**
-    * Devuelbe la lista de alquileres.
-    * @return listaAlquiler
-    */
-    public ArrayList<Alquiler> getAlquiler()
-    {
-        return listaAlquiler;
-    }
-    
-    /**
-    * Asigna una nueva lista de alquileres.
-     * @return 
-    */
-    public Alquiler getAlquilerActual()
-    {
-        if(listaAlquiler.isEmpty())
-        {
-            return null;
-        }
-        else
-        {
-            return listaAlquiler.get(listaAlquiler.size() - 1);
-        }
     }
 }

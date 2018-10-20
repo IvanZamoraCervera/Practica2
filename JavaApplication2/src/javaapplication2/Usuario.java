@@ -21,6 +21,8 @@ public class Usuario
     private String correo; // variable para saber el correo del usuario
     private String dominio = "@gmail.com"; // 
     private String Cadena_idcliente; // String para imprimir el id con 3 digitos
+    public static ArrayList<Objeto> listaObjetos = new ArrayList<Objeto>();// Creo un arrayList para almacenar los usuarios del sistema
+    
     /*
       Constructor de la clase con parametros
     */
@@ -36,6 +38,14 @@ public class Usuario
     */
     Usuario() {
         
+    }
+    
+    public void crearUsuarios()
+    {
+        Usuario u = new Usuario("Iván","Zamora");
+        Usuario u2 = new Usuario("Cristian","Alba");
+        listaUsuarios.add(u);
+        listaUsuarios.add(u2);
     }
     /**
     * Devuelve el nombre del usuario.
@@ -91,9 +101,12 @@ public class Usuario
      */
     public void listarUsuario() 
     {
-        listaUsuarios.forEach((n) -> {
-            System.out.println(n.toString());
-        }); 
+        for(int ñ = 0; ñ < listaUsuarios.size(); ñ++) 
+        {
+            System.out.println("PROPIETARIO " + listaUsuarios.get(ñ).getIDusuario());
+            System.out.println("Nombre del propietario: " + listaUsuarios.get(ñ).getNombre());
+            System.out.println("Correo Electronico: " + listaUsuarios.get(ñ).getCorreo() + "\n");
+        }
     }
     /**
     * Sobreescritura del metodo toString para mostrar el ID del usuario, el nombre y el correo 
@@ -102,6 +115,6 @@ public class Usuario
     @Override
     public String toString() 
     {
-        return "ID: " + Cadena_idcliente + " ID " + IDusuario + " - Nombre: " + this.nombre + " - Correo: " + this.correo + "\n";
+        return "" + Cadena_idcliente + " " + this.nombre + " " + this.correo + "\n";
     }
 }
