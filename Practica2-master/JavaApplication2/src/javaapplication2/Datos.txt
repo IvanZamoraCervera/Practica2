@@ -1,0 +1,7 @@
+PROPIETARIO 1
+Nombre del propietario: Iván
+Correo Electronico: Zamora@gmail.com
+PROPIETARIO 2
+Nombre del propietario: Cristian
+Correo Electronico: Alba@gmail.com
+Importe total acumulado para la startup: 0
