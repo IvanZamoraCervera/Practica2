@@ -55,7 +55,7 @@ public class AlquilerObjeto {
                     if(this.id_alq <= listaUsuarios.size()+1)
                     {
                         valido = true;
-                        this.nombre = listaUsuarios.get(user.getIDusuario()).getNombre();
+                        this.nombre = listaUsuarios.get(id_alq-1).getNombre();
                         alquiler.setNombreUsuario(this.nombre);
                     }
                     else

@@ -36,6 +36,7 @@ public class JavaApplication2 {
             System.out.println("7 – Cambiar importe por dia de un objeto");
             System.out.println("8 - Guardar en fichero");
             System.out.println("9 – Baja de un usuario");
+            System.out.println("10 - Listar mas asiduos");
             System.out.println("11 – Salir");
             
             System.out.print("Escribe el numero de la opcion deseada: ");
@@ -87,6 +88,11 @@ public class JavaApplication2 {
                     case 9:
                         System.out.println("Se ha secleccionado la opcion de modificar el importe por dia");
                         BajaUsuario bu = new BajaUsuario();
+                        break;
+                        
+                    case 10:
+                        System.out.println("Se ha secleccionado la opcion listar mas asiduos");
+                        ListarAsiduos la = new ListarAsiduos();
                         break;
                         
                     case 11:
